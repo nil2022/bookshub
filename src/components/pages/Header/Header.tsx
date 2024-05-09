@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 function Header() {
 	return (
-		<div className="w-full bg-zinc-800 z-10 fixed top-0 shadow-sm">
-			<div className="flex justify-end xs:justify-between items-center mx-auto p-4">
-				<div className="px-8">
+		<div className="w-full bg-zinc-800 z-10 fixed top-0">
+			<div className="flex justify-between items-center mx-auto p-4">
+				<div className="px-2 sm:px-8">
 					<Link to={"/"} className="flex justify-start">
 						<div>
 							<img
@@ -23,7 +23,7 @@ function Header() {
 					<ul className="flex justify-end">
 						<li>
 							<Link
-								to={"#"}
+								to={"/login"}
 								className="sm:px-6 sm:py-2 mx-4 sm:hover:bg-zinc-700/40 rounded-md transition-all duration-700 sm:text-white/50 sm:hover:text-white"
 							>
 								Login

@@ -1,30 +1,22 @@
-# React + TypeScript + Vite
+# Verse - Read Books Anywhere, Anytime.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Verse](./public/Hero-1.jpg)
 
-Currently, two official plugins are available:
+## Introduction
+ **Verse** is a platform that provides you with a wide range of books.  It is an open source project and we are continuously adding new books to the platform.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Read Books Anywhere, Anytime.**
+- **Search for Books.**
+- **Subscribe to Books.**
+- **Rate Books.**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies used
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Redux](https://redux.js.org/)
+- [React-Redux](https://react-redux.js.org/)
+- [React-Router-Dom](https://reactrouter.com/)
+- [TailwindCSS](https://tailwindcss.com/)

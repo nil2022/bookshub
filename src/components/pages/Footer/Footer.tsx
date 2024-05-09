@@ -20,7 +20,7 @@ function Footer() {
 					Copyright © 2024 Verse. All Rights Reserved.
 				</div>
 				<div className="text-sm sm:text-md text-white font-[500] my-2">
-					<ul className="flex flex-col sm:flex-row gap-y-2 mt-2 text-center ">
+					<ul className="flex flex-col sm:flex-row gap-y-2 mt-2 sm:mt-0 text-center">
 						<li className="">
 							<Link
 								to={"#"}
