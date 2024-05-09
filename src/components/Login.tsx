@@ -72,7 +72,7 @@ function Login() {
 					</div>
 				</form>
 				<div className="text-center mt-4">
-					If you face any issue, please click on Support Tab.
+					Need Support ? Contact Us.
 				</div>
 			</div>
 		</div>

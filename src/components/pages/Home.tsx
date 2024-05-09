@@ -22,12 +22,19 @@ function Home() {
 					</Link>
 				</div>
 				{/* Place images below */}
-				<div className="flex flex-wrap justify-center gap-4 p-8 text-white">
+				<div className="flex flex-wrap justify-center gap-4 py-8 text-white transition-all duration-500">
 					<img
 						src="/books-1.jpg"
 						alt="left-image"
 						width={800}
 						className="hidden sm:block rounded-3xl"
+					/>
+					<img
+						src="/ebook.jpg"
+						alt="left-image"
+						width={'fit-content'}
+						height={700}
+						className="sm:hidden rounded-3xl"
 					/>
 				</div>
 			</div>

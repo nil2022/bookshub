@@ -6,9 +6,9 @@ function Register() {
 	const [error, setError] = useState<string | null>(null);
 	const { register, handleSubmit } = useForm();
 
-	const login = async (data: any) => {
-		const { email, password } = data;
-		console.log(email, password);
+	const signup = async (data: any) => {
+		const { fullName, email, password } = data;
+		console.log(fullName, email, password);
 	};
 
 	return (
@@ -23,7 +23,7 @@ function Register() {
 					Create your free account
 				</h2>
 				<p className="mt-2 text-center text-base ">
-					Already have account with us ?<br/>
+					Already have account with us ?<br />
 					<Link
 						to="/login"
 						className="font-medium text-primary transition-all duration-200 hover:underline"
@@ -37,7 +37,7 @@ function Register() {
 					</p>
 				)}
 				<form
-					onSubmit={handleSubmit(login)}
+					onSubmit={handleSubmit(signup)}
 					className="mt-8 max-w-[280px] mx-auto"
 				>
 					<div className="space-y-5">
@@ -84,7 +84,7 @@ function Register() {
 					</div>
 				</form>
 				<div className="text-center mt-4">
-					If you face any issue, please click on Support Tab.
+					Need Support ? Contact Us.
 				</div>
 			</div>
 		</div>
