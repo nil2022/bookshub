@@ -10,7 +10,7 @@
 - **Read Books Anywhere, Anytime.**
 - **Search for Books.**
 - **Subscribe to Books.**
-- **Rate Books.**
+- **Rate Books.** and many more...
 
 ## Technologies used
 
@@ -20,3 +20,7 @@
 - [React-Redux](https://react-redux.js.org/)
 - [React-Router-Dom](https://reactrouter.com/)
 - [TailwindCSS](https://tailwindcss.com/)
+- [React-Hook-Form](https://react-hook-form.com/)
+- [Appwrite](https://appwrite.io/)
+- [Prettier](https://prettier.io/)
+- [Vite](https://vitejs.dev/)

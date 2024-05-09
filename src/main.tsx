@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/pages/Home.tsx'
 import Login from './components/Login.tsx'
 import Register from './components/Register.tsx'
+import Dashboard from './components/Dashboard.tsx'
+import VerifyEmail from './components/VerifyEmail.tsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />
+      },
+      {
+        path: '/verify-email',
+        element: <VerifyEmail />
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard />
       }
     ]
   }

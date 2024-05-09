@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Footer() {
 	return (
 		<div className="w-full bg-zinc-800 shadow-sm">
-			<div className="flex flex-col sm:flex-row justify-end xs:justify-between items-center mx-auto">
+			<div className="flex flex-col sm:flex-row justify-end xs:justify-between items-center mx-auto py-2">
 				<div className="hidden lg:flex px-8">
 					<div>
 						<img src="/Verse.png" 
@@ -16,7 +16,7 @@ function Footer() {
 						Verse
 					</p>
 				</div>
-				<div className="text-sm sm:text-sm text-white/40 font-[400] text-center px-2 md:pl-24 mt-2 sm:-mt-0">
+				<div className="text-sm sm:text-sm text-white/40 font-[400] text-center px-2 md:pl-16 lg:pl-24 mt-2 sm:-mt-0">
 					Copyright © 2024 Verse. All Rights Reserved.
 				</div>
 				<div className="text-sm sm:text-md text-white font-[500] my-2 md:mr-4">

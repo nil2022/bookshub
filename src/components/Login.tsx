@@ -1,20 +1,38 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import authService from "./server/auth.appwrite";
+
 
 function Login() {
 
     const [error, setError] = useState<string | null>(null);
     const {register, handleSubmit} = useForm();
+	const navigate = useNavigate();
 
-    const login = async (data: any) => {
-        const {email, password} = data;
-        console.log(email, password);
-    }
+	const login = async (data: any) => {
+		try {
+			const response = await authService.login(data.email, data.password);
+			if (response) {
+				alert('Login successful');
+				console.log('Login successful');
+				localStorage.setItem('authStatus', JSON.stringify(true));
+				navigate('/dashboard');
+				// await authService.logout();
+			} else {
+				console.log('response: ', response);
+				alert('Something went wrong');
+			}
+		} catch (error: any) {
+			setError(error.message);
+			console.log('login error: ', error);
+		}
+	};
+
 
 
 	return (
-		<div className="bg-zinc-800 min-h-screen pt-28">
+		<div className="bg-zinc-800 min-h-fit lg:min-h-screen pt-28">
 			<div className="mx-auto max-w-md rounded-xl px-8 py-16 sm:py-32 text-white bg-zinc-600">
 				<div className="mb-2 flex justify-center">
 					<span className="inline-block w-full max-w-[100px] text-center">
