@@ -6,7 +6,7 @@ function Footer() {
 			<div className="flex flex-col sm:flex-row justify-end xs:justify-between items-center mx-auto p-4">
 				<div className="hidden xs:flex px-8">
 					<div>
-						<img src="/Verse-1.jpeg" 
+						<img src="/Verse.png" 
 						alt="image"
 						width={50}
 						className="rounded-full"

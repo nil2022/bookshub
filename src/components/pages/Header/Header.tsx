@@ -8,7 +8,7 @@ function Header() {
 					<Link to={"/"} className="flex justify-start">
 						<div>
 							<img
-								src="/Verse-1.jpeg"
+								src="/Verse.png"
 								alt="image"
 								width={50}
 								className="rounded-full"

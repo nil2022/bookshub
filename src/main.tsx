@@ -4,6 +4,8 @@ import Layout from './Layout.tsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/pages/Home.tsx'
+import Login from './components/Login.tsx'
+import Register from './components/Register.tsx'
 
 const router = createBrowserRouter([
   {
@@ -16,11 +18,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/register',
-        element: <div>Register</div>
+        element: <Register />
       },
       {
         path: '/login',
-        element: <div>Login</div>
+        element: <Login />
       }
     ]
   }
