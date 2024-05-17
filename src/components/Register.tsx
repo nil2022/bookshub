@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom';
 import authService from './server/auth.appwrite';
 
 function Register() {
+    const [passwordVisible, setPasswordVisible] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const { register, handleSubmit } = useForm();
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
+    };
 
     const redirectEmailUrl = import.meta.env.VITE_EMAILVERIFICATION_URL;
 
@@ -21,26 +26,29 @@ function Register() {
             if (response) {
                 alert('Account created successfully');
                 console.log('Account created successfully');
-                await authService.login(data.email, data.password)
-				.then(async() => {
-                    await authService
-                        .sendEmailVerification(redirectEmailUrl)
-                        .then(async() => {
-                            alert('Email verification link sent to your email');
-                            console.log(
-                                'Email verification link sent to your email'
-                            );
-						await authService.logout();
-                        })
-                        .catch((error) => {
-                            alert(error.message);
-                            throw error;
-                        });
-                })
-				.catch((error) => {
-					alert(error.message);
-					throw error;
-				})
+                await authService
+                    .login(data.email, data.password)
+                    .then(async () => {
+                        await authService
+                            .sendEmailVerification(redirectEmailUrl)
+                            .then(async () => {
+                                alert(
+                                    'Email verification link sent to your email'
+                                );
+                                console.log(
+                                    'Email verification link sent to your email'
+                                );
+                                await authService.logout();
+                            })
+                            .catch((error) => {
+                                alert(error.message);
+                                throw error;
+                            });
+                    })
+                    .catch((error) => {
+                        alert(error.message);
+                        throw error;
+                    });
             } else {
                 console.log('response: ', response);
                 alert('Something went wrong');
@@ -54,9 +62,15 @@ function Register() {
     return (
         <div className="bg-zinc-800 min-h-fit lg:min-h-screen pt-28">
             <div className="mx-auto max-w-md rounded-xl px-8 py-16 sm:py-32 text-white bg-zinc-600">
-                <div className="mb-2 flex justify-center">
-                    <span className="inline-block w-full max-w-[100px] text-center">
-                        Logo
+                <div className="mb-2 w-full">
+                    <span className="inline-block w-full mx-auto">
+                        <img
+                            src="/form-64.png"
+                            alt="register"
+                            width={40}
+                            loading="lazy"
+                            className="mx-auto "
+                        />
                     </span>
                 </div>
                 <h2 className="text-center text-2xl font-bold leading-tight">
@@ -103,14 +117,33 @@ function Register() {
                             })}
                             className="w-full p-2 bg-gray-700 hover:ring-2 hover:ring-zinc-400 placeholder:text-slate-400 rounded-md transition-all duration-500 outline-none"
                         />
-                        <input
-                            placeholder="Your Password"
-                            type="password"
-                            {...register('password', {
-                                required: true
-                            })}
-                            className="w-full p-2 bg-gray-700 hover:ring-2 hover:ring-zinc-400 placeholder:text-slate-400 rounded-md transition-all duration-500 outline-none"
-                        />
+                        <div className="relative flex flex-col">
+                            <input
+                                placeholder="Your Password"
+                                type={passwordVisible ? 'text' : 'password'}
+                                {...register('password', {
+                                    required: true
+                                })}
+                                className="w-full p-2 bg-gray-700 hover:ring-2 hover:ring-zinc-400 placeholder:text-slate-400 rounded-md transition-all duration-500 outline-none"
+                            />
+                            <div className="relative w-full py-2">
+                                <button
+                                    type="button"
+                                    onClick={togglePasswordVisibility}
+                                    className="flex justify-center"
+                                >
+                                    <input
+                                        type="checkbox"
+                                        checked={passwordVisible}
+                                        onChange={togglePasswordVisibility}
+                                        className="my-auto w-[16px] h-[16px]"
+                                    />
+                                    <span className="ml-2 font-[500] text-base">
+                                        Show Password
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
                         <button
                             type="submit"
                             className="w-full bg-slate-900 p-2 text-lg font-[600] rounded-md hover:bg-slate-700 transition-all duration-500"
